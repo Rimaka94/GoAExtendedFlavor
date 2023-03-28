@@ -1,0 +1,40 @@
+﻿namespace = WCEF_KOBOLDS
+
+### Main test
+WCEF_KOBOLDS.5 = {
+	type = character_event
+	title = WCEF_KOBOLDS_5_TITLE
+	desc = WCEF_KOBOLDS_5_DESC
+	theme = mental_health
+	left_portrait = {
+		character = root
+		animation = paranoia
+	}
+	
+	trigger = {
+		has_trait = creature_kobold
+		has_faith = faith:cult_of_the_candle
+	}
+
+	weight_multiplier = {
+		base = 1
+		modifier = { #Less likely if you already have an extreme trait
+			add = -0.75
+			has_special_content_trait = yes
+		}
+	}
+
+	immediate = {
+		add_character_flag = {
+			flag = had_event_wcef_kobolds
+			years = 10
+		}		
+	}
+
+	option = {
+		name = WCEF_KOBOLDS_5_OPT_A
+		add_trait = lunatic_1
+		add_martial_skill = 1
+		add_stewardship_lifestyle_xp = 300
+	}
+}
