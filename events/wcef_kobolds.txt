@@ -1,6 +1,7 @@
 ﻿namespace = WCEF_KOBOLDS
 
-### Main test
+### CULTURE: Kobold, FAITH: Candleism
+### 
 WCEF_KOBOLDS.5 = {
 	type = character_event
 	title = WCEF_KOBOLDS_5_TITLE
@@ -36,5 +37,158 @@ WCEF_KOBOLDS.5 = {
 		add_trait = lunatic_1
 		add_martial_skill = 1
 		add_stewardship_lifestyle_xp = 300
+	}
+}
+
+### CULTURE: Kobold, FAITH: Candleism
+### DECISION - Sanctify a holy site - choose holy site
+WCEF_KOBOLDS_0099 = {
+	type = character_event
+	title = WCEF_KOBOLDS_0099_TITLE
+	desc = WCEF_KOBOLDS_0099_DESC
+	theme = faith
+	left_portrait = {
+		character = root
+		animation = personality_zealous
+	}
+	immediate = {
+
+	}
+	option = { #c_blackrock_depths - prowess, toughness
+		trigger = {
+			title:c_blackrock_depths.holder.top_liege = root
+		}
+		name = WCEF_KOBOLDS_0099_OPT_A
+		add_prowess_skill = 2
+	}
+	option = { #c_gnomeregan - cultural fascination
+		trigger = {
+			title:c_gnomeregan.holder.top_liege = root
+		}
+		name = WCEF_KOBOLDS_0099_OPT_B
+	}
+	option = { #c_ironforge - stewardship, no supply limit in mountains
+		trigger = {
+			title:c_ironforge.holder.top_liege = root
+		}
+		name = WCEF_KOBOLDS_0099_OPT_C
+	}
+	option = { #c_red_desert  (aka Tomb of the Watchers, a long tunnel system like Uldaman) - learning, piety
+		trigger = {
+			title:c_red_desert.holder.top_liege = root
+		}
+		name = WCEF_KOBOLDS_0099_OPT_D
+	}
+	option = { #c_grim_batol - dread, less tyranny
+		trigger = {
+			title:c_grim_batol.holder.top_liege = root
+		}
+		name = WCEF_KOBOLDS_0099_OPT_E
+	}
+	option = { #fallback, not yet
+		name = WCEF_KOBOLDS_0099_OPT_F
+	}
+}
+
+
+
+### CULTURE: Kobold, FAITH: Candleism
+### DECISION - Sanctify a holy site - finale
+WCEF_KOBOLDS_0100 = {
+	type = character_event
+	title = WCEF_KOBOLDS_0100_TITLE
+	desc = {
+		first_valid = {
+			# Divine Blood if Temporal Head.
+			triggered_desc = {
+				trigger = {
+					OR = {
+						root.faith.religious_head = root
+						root.faith = { has_doctrine = doctrine_no_head }
+					}
+				}
+				desc = WCEF_KOBOLDS_0100_DESC_A
+			}
+			# Regular.
+			desc = WCEF_KOBOLDS_0100_DESC_B
+		}
+	}
+	theme = faith
+	left_portrait = {
+		character = root
+		animation = personality_zealous
+	}
+	right_portrait = {
+		character = scope:scoped_pope
+		animation = admiration
+	}
+
+	immediate = {
+		play_music_cue = "mx_cue_sacredrite"
+		hidden_effect = {
+			save_scope_as = scoped_ruler
+			if = {
+				limit = {
+					exists = root.faith.religious_head
+					NOT = { root = root.faith.religious_head }
+				}
+				root.faith.religious_head = { save_scope_as = scoped_pope }
+			}
+			dynasty = {
+				set_variable = {
+					name = variable_sanctified_kobold_mine
+					value = yes
+				}
+			}
+		}
+	}
+	option = {
+		#Pick what text to display
+		name = { #Temporal.
+			trigger = {
+				root.faith.religious_head = root
+			}
+			text = WCEF_KOBOLDS_0100_OPT_A
+		}
+		name = { #Spiritual.
+			trigger = {
+				NOT = { root.faith.religious_head = root }
+			}
+			text = WCEF_KOBOLDS_0100_OPT_B
+		}
+
+		#Next, what nickname is given
+		if = {
+			limit = {
+				root.faith.religious_head = root
+			}
+			set_nickname_effect = { NICKNAME = nick_candlekeeper }
+		}
+		if = { #Spiritual.
+			limit = {
+				NOT = { root.faith.religious_head = root }
+			}
+			set_nickname_effect = { NICKNAME = nick_candlekeeper }
+		}
+		#All live descendants get the descendant trait
+		kobolds_sanctify_holy_site_decision_effect = yes
+		#Notifications
+		every_player = {
+			limit = {
+				faith = root.faith
+				NOR = {
+					this = root
+					this.dynasty = root.dynasty
+				}
+			}
+			trigger_event = major_decisions.0102 #Notify players of same faith.
+		}
+		every_player = {
+			limit = {
+				this.dynasty = root.dynasty
+				NOT = { this = root }
+			}
+			trigger_event = major_decisions.0103 #Notify dynasty members.
+		}
 	}
 }

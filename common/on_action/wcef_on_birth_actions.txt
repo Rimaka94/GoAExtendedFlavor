@@ -1,0 +1,14 @@
+﻿# called for the newborn child
+# scope:child is the new born character
+# scope:mother is the pregnant mother
+# scope:father is the family father (not the biological)
+# scope:real_father is the biological father
+# scope:is_bastard, true if a known bastard
+#on_birth_child = {
+#	events = {
+#		#WCEF_KOBOLDS_0101 #Savior descendants
+#	}
+#	effect = {
+#		#empty
+#	}
+#}
