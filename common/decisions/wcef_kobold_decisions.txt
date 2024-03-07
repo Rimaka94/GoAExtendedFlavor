@@ -239,7 +239,7 @@ kobolds_sanctify_holy_site = {
 
 	is_shown = {
 		has_trait = creature_kobold
-		has_faith = faith:cult_of_the_candle
+		#has_faith = faith:cult_of_the_candle
 		is_lowborn = no
 		#highest_held_title_tier >= 3 #Dukes and higher.
 		NOT = { #Just once per Faith.
@@ -262,51 +262,81 @@ kobolds_sanctify_holy_site = {
 				exists = var:variable_sanctified_kobold_mine
 			}
 		}
-		OR = {  #Either headless faith, religious head himself, or in good relations with other religious head.
-			root.faith = { has_doctrine = doctrine_no_head }
+		OR = {  #If faith is reformed, then all Kobolds have access regardless of has_faith
+			has_faith = faith:cult_of_the_candle
 			AND = {
-				exists = root.faith.religious_head
-				NOT = { root = root.faith.religious_head }
+				has_been_reformed = faith:cult_of_the_candle
+				has_trait = creature_kobold
 			}
 		}
 	}
 
 	is_valid = {
-		trigger_if = {
-			limit = {
-				exists = root.faith.religious_head
-				NOT = { root = root.faith.religious_head }
-			}
-			root.faith.religious_head = {
-				opinion = {
-					target = root
-					value >= 75
-				}
-			}
-		}
+		#trigger_if = {
+		#	limit = {
+		#		exists = root.faith.religious_head
+		#		NOT = { root = root.faith.religious_head }
+		#	}
+		#	root.faith.religious_head = {
+		#		opinion = {
+		#			target = root
+		#			value >= 75
+		#		}
+		#	}
+		#}
 		#custom_description = {
 		#	text = faith_is_reformed
 		#	subject = root
 		#	faith = { NOT = { has_doctrine_parameter = unreformed } }
 		#}
 		custom_description = {
-			text = "consecrate_bloodline_holy_site"
+			text = "wcef_kobold_holy_sites"
 			faith = {
 				any_holy_site = {
 					OR = {
 						county.holder = root
 						county.holder.top_liege = { this = root }
 					}
-					count >= 1
+					count >= 3
 				}
 			}
 		}
 		piety_level >= 2
+		OR = {  #If faith is reformed, then all Kobolds have access regardless of has_faith
+			has_faith = faith:cult_of_the_candle
+			AND = {
+				#has_trait = creature_kobold
+				custom_description = {
+					text = WCEF_kobold_candlism_is_reformed
+					#faith_has_been_reformed = faith:cult_of_the_candle
+					exists = faith:cult_of_the_candle.var:has_been_reformed
+				}
+				custom_description = {
+					text = "WCEF_kobold_shares_candlism_holy_sites"
+					title:b_blackrock_depths = {
+						is_holy_site_of = root.faith
+					}
+					title:b_ironforge = {
+						is_holy_site_of = root.faith
+					}
+					title:b_gnomeregan = {
+						is_holy_site_of = root.faith
+					}
+					title:b_red_desert = {
+						is_holy_site_of = root.faith
+					}
+					title:b_grim_batol = {
+						is_holy_site_of = root.faith
+					}
+				}
+			}
+		}
 	}
 
 	cost = {
-		piety = 300
-		gold = 100
+		#piety = 300
+		#gold = 100
+		#moved to is_valid due to branching choices
 	}
 
 	effect = {

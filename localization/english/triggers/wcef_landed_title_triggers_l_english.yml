@@ -1,0 +1,4 @@
+﻿l_english:
+
+ WCEF_KOBOLDS_ENOUGH_HOLY_SITES:1 "You control three or more [CHARACTER.GetFaith.GetAdjective] [holy_sites|E]"
+ WCEF_KOBOLDS_NOT_ENOUGH_HOLY_SITES:1 "You do #bold not#! control at least three [CHARACTER.GetFaith.GetAdjective] [holy_sites|E]"

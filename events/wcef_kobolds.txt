@@ -57,9 +57,16 @@ WCEF_KOBOLDS_0099 = {
 	option = { #c_blackrock_depths - prowess, toughness
 		trigger = {
 			title:c_blackrock_depths.holder.top_liege = root
+			#completely_controls = title:c_blackrock_depths
 		}
 		name = WCEF_KOBOLDS_0099_OPT_A
 		add_prowess_skill = 2
+		title:c_blackrock_depths = {
+			add_county_modifier = {
+				modifier = wcef_kobold_great_candle_active
+				#add_county_modifier = wcef_kobold_great_candle_active
+			}
+		}
 	}
 	option = { #c_gnomeregan - cultural fascination
 		trigger = {

@@ -1,0 +1,10 @@
+﻿wcef_kobold_great_candle_active = {
+	icon = piety_positive
+	development_growth = 0.15
+	monthly_county_control_change_add = 0.3
+}
+
+wcef_kobold_great_candle_inactive = {
+	icon = piety_negative
+	monthly_county_control_change_add = -0.1
+}

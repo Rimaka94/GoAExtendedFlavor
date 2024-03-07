@@ -26,3 +26,6 @@
  kobolds_sanctify_holy_site_tooltip:0 "Sanctify a [holy_site|E] to gain permanent bonuses"
 
  fervor_kobold_sanctify:0 "Holy site sanctified by our savior, [progenitor_holy_blood.GetName]"
+
+ WCEF_kobold_candlism_is_reformed:0 "$cult_of_the_candle$ has been reformed."
+ WCEF_kobold_shares_candlism_holy_sites:0 "Your [faith|E] shares the same $cult_of_the_candle$ [holy_sites|E]."
