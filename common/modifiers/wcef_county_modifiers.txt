@@ -1,6 +1,7 @@
 ﻿wcef_kobold_great_candle_active = {
 	icon = piety_positive
-	development_growth = 0.15
+	travel_danger = -5
+	development_growth = 0.05
 	monthly_county_control_change_add = 0.3
 }
 

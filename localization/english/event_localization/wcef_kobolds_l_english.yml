@@ -5,7 +5,7 @@
  WCEF_KOBOLDS_5_OPT_A:0 "I am chosen!"
 
  WCEF_KOBOLDS_0099_TITLE:0 "Placing the Great Candle"
- WCEF_KOBOLDS_0099_DESC:0 "Of the Holy Sites we currently control, which would be best suited for the Great Candle? A choice as simple as its location could change its whole meaning, we must be sure it is befitting of our future plans for all $cult_of_the_candle_adherent_plural$."
+ WCEF_KOBOLDS_0099_DESC:0 "Of the Holy Sites we currently control, which would be best suited for the Great Candle? Where it resides is important, we must ensure it is befitting of our future plans for all $cult_of_the_candle_adherent_plural$."
  WCEF_KOBOLDS_0099_OPT_A:0 "$c_blackrock_depths$ will inspire us to be strong."
  WCEF_KOBOLDS_0099_OPT_B:0 "The ruins of $c_gnomeregan$ can teach us to dig better and faster!"
  WCEF_KOBOLDS_0099_OPT_C:0 "In $c_ironforge$ we can inspire great rulers!"

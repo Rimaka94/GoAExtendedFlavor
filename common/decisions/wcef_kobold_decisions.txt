@@ -248,47 +248,17 @@ kobolds_sanctify_holy_site = {
 			}
 		}
 		NOR = {
-			# Warcraft
-
-			#has_trait = blood_of_prophet
-			has_trait = savior
-			#has_trait = divine_blood
-			#has_trait = paragon
-			#has_trait = consecrated_blood
-
-			# Warcraft
-
 			dynasty = {
-				exists = var:variable_sanctified_kobold_mine
+				exists = var:variable_sanctified_kobold_mine # TODO: modify, do not link to dynasty
 			}
 		}
-		OR = {  #If faith is reformed, then all Kobolds have access regardless of has_faith
+		OR = {
 			has_faith = faith:cult_of_the_candle
-			AND = {
-				has_been_reformed = faith:cult_of_the_candle
-				has_trait = creature_kobold
-			}
+			faith = { var:parent_faith = faith:cult_of_the_candle }
 		}
 	}
 
 	is_valid = {
-		#trigger_if = {
-		#	limit = {
-		#		exists = root.faith.religious_head
-		#		NOT = { root = root.faith.religious_head }
-		#	}
-		#	root.faith.religious_head = {
-		#		opinion = {
-		#			target = root
-		#			value >= 75
-		#		}
-		#	}
-		#}
-		#custom_description = {
-		#	text = faith_is_reformed
-		#	subject = root
-		#	faith = { NOT = { has_doctrine_parameter = unreformed } }
-		#}
 		custom_description = {
 			text = "wcef_kobold_holy_sites"
 			faith = {
@@ -302,7 +272,7 @@ kobolds_sanctify_holy_site = {
 			}
 		}
 		piety_level >= 2
-		OR = {  #If faith is reformed, then all Kobolds have access regardless of has_faith
+		OR = {
 		has_faith = faith:cult_of_the_candle
 			custom_description = {
 				text = WCEF_kobold_candlism_is_reformed
