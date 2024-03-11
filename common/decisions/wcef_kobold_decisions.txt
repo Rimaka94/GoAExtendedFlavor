@@ -303,32 +303,11 @@ kobolds_sanctify_holy_site = {
 		}
 		piety_level >= 2
 		OR = {  #If faith is reformed, then all Kobolds have access regardless of has_faith
-			has_faith = faith:cult_of_the_candle
-			AND = {
-				#has_trait = creature_kobold
-				custom_description = {
-					text = WCEF_kobold_candlism_is_reformed
-					#faith_has_been_reformed = faith:cult_of_the_candle
-					exists = faith:cult_of_the_candle.var:has_been_reformed
-				}
-				custom_description = {
-					text = "WCEF_kobold_shares_candlism_holy_sites"
-					title:b_blackrock_depths = {
-						is_holy_site_of = root.faith
-					}
-					title:b_ironforge = {
-						is_holy_site_of = root.faith
-					}
-					title:b_gnomeregan = {
-						is_holy_site_of = root.faith
-					}
-					title:b_red_desert = {
-						is_holy_site_of = root.faith
-					}
-					title:b_grim_batol = {
-						is_holy_site_of = root.faith
-					}
-				}
+		has_faith = faith:cult_of_the_candle
+			custom_description = {
+				text = WCEF_kobold_candlism_is_reformed
+				exists = faith:cult_of_the_candle.var:has_been_reformed
+				faith = { var:parent_faith = faith:cult_of_the_candle }
 			}
 		}
 	}

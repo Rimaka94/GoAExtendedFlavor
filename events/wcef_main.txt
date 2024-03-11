@@ -35,8 +35,5 @@ WCEFM.5 = {
 		name = WCEFM_5_OPT_A
 		add_trait = lunatic_1
 		add_martial_skill = 1
-		add_province_modifier = {
-			modifier = x
-		}
 	}
 }

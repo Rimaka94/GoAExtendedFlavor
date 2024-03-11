@@ -5,12 +5,12 @@
  WCEF_KOBOLDS_5_OPT_A:0 "I am chosen!"
 
  WCEF_KOBOLDS_0099_TITLE:0 "Placing the Great Candle"
- WCEF_KOBOLDS_0099_DESC:0 "Of the Holy Sites we currently control, which would be best suited for the Great Candle? A choice as simple as its location could change its whole meaning, we must be sure it is befitting of our future plans for all Kobolds."
+ WCEF_KOBOLDS_0099_DESC:0 "Of the Holy Sites we currently control, which would be best suited for the Great Candle? A choice as simple as its location could change its whole meaning, we must be sure it is befitting of our future plans for all $cult_of_the_candle_adherent_plural$."
  WCEF_KOBOLDS_0099_OPT_A:0 "$c_blackrock_depths$ will inspire us to be strong."
  WCEF_KOBOLDS_0099_OPT_B:0 "The ruins of $c_gnomeregan$ can teach us to dig better and faster!"
  WCEF_KOBOLDS_0099_OPT_C:0 "In $c_ironforge$ we can inspire great rulers!"
- WCEF_KOBOLDS_0099_OPT_D:0 "The caves in $c_red_desert$... perhaps the Great Candle could help explain them."
- WCEF_KOBOLDS_0099_OPT_E:0 "$c_grim_batol$ is scary... very good. Others could learn to fear us."
+ WCEF_KOBOLDS_0099_OPT_D:0 "The caves in $c_red_desert$... the Great Candle could enlighten us."
+ WCEF_KOBOLDS_0099_OPT_E:0 "$c_grim_batol$ is scary... Others could learn to fear us."
  WCEF_KOBOLDS_0099_OPT_F:0 "Nevermind, we should wait."
 
  WCEF_KOBOLDS_0100_TITLE:0 "The Candle Speaks"
@@ -21,11 +21,11 @@
  WCEF_KOBOLDS_0100_DESC_B:0 "Aaaa"
 
  kobolds_sanctify_holy_site:0 "Sanctify Holy Site"
- kobolds_sanctify_holy_site_desc:0 "In honor of The Candle, we should proclaim one of our holy sites to be the center of our faith and build a Great Candle out of wax from Kobolds across all of Azeroth. Kobolds will gather in the millions to see the Great Candle!"
+ kobolds_sanctify_holy_site_desc:0 "In honor of The Candle, we should proclaim one of our holy sites to be the center of our faith and build a Great Candle out of wax from $cult_of_the_candle_adherent_plural$ across all of Azeroth!"
  kobolds_sanctify_holy_site_confirm:0 "Prepare the Great Candle"
  kobolds_sanctify_holy_site_tooltip:0 "Sanctify a [holy_site|E] to gain permanent bonuses"
 
  fervor_kobold_sanctify:0 "Holy site sanctified by our savior, [progenitor_holy_blood.GetName]"
 
- WCEF_kobold_candlism_is_reformed:0 "$cult_of_the_candle$ has been reformed."
- WCEF_kobold_shares_candlism_holy_sites:0 "Your [faith|E] shares the same $cult_of_the_candle$ [holy_sites|E]."
+ WCEF_kobold_candlism_is_reformed:0 "You are of a [Concept('organized', 'reformed')|E] $cult_of_the_candle$ [faith|E]."
+ WCEF_kobold_shares_candlism_holy_sites:0 "Your [faith|E] shares the same $cult_of_the_candle$ [holy_sites|El]."
