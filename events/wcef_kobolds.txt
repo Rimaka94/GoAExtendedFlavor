@@ -42,7 +42,7 @@ WCEF_KOBOLDS.5 = {
 
 ### CULTURE: Kobold, FAITH: Candleism
 ### DECISION - Sanctify a holy site - choose holy site
-WCEF_KOBOLDS_0099 = {
+WCEF_KOBOLDS.0099 = {
 	type = character_event
 	title = WCEF_KOBOLDS_0099_TITLE
 	desc = WCEF_KOBOLDS_0099_DESC
@@ -60,13 +60,22 @@ WCEF_KOBOLDS_0099 = {
 			#completely_controls = title:c_blackrock_depths
 		}
 		name = WCEF_KOBOLDS_0099_OPT_A
+		#Can only be done once
+		hidden_effect = {
+			add_to_global_variable_list = {
+				name = unavailable_unique_decisions
+				target = flag:wcef_candlist_great_candle_decision
+			}
+		}
 		add_prowess_skill = 2
 		title:c_blackrock_depths = {
+			save_scope_as = great_candle_county
 			add_county_modifier = {
 				modifier = wcef_kobold_great_candle_active
 				#add_county_modifier = wcef_kobold_great_candle_active
 			}
 		}
+		trigger_event = WCEF_KOBOLDS.0100
 	}
 	option = { #c_gnomeregan - cultural fascination
 		trigger = {
@@ -101,12 +110,11 @@ WCEF_KOBOLDS_0099 = {
 
 ### CULTURE: Kobold, FAITH: Candleism
 ### DECISION - Sanctify a holy site - finale
-WCEF_KOBOLDS_0100 = {
+WCEF_KOBOLDS.0100 = {
 	type = character_event
 	title = WCEF_KOBOLDS_0100_TITLE
 	desc = {
 		first_valid = {
-			# Divine Blood if Temporal Head.
 			triggered_desc = {
 				trigger = {
 					OR = {
@@ -164,19 +172,8 @@ WCEF_KOBOLDS_0100 = {
 			text = WCEF_KOBOLDS_0100_OPT_B
 		}
 
-		#Next, what nickname is given
-		if = {
-			limit = {
-				root.faith.religious_head = root
-			}
-			set_nickname_effect = { NICKNAME = nick_candlekeeper }
-		}
-		if = { #Spiritual.
-			limit = {
-				NOT = { root.faith.religious_head = root }
-			}
-			set_nickname_effect = { NICKNAME = nick_candlekeeper }
-		}
+		set_nickname_effect = { NICKNAME = nick_candlekeeper }
+
 		#All live descendants get the descendant trait
 		kobolds_sanctify_holy_site_decision_effect = yes
 		#Notifications

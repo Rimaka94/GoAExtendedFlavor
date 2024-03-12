@@ -1,2 +1,3 @@
 ﻿l_english:
  nick_candlekeeper:0 "the Candlekeeper"
+ nick_candlekeeper_desc:0 "[CHARACTER.GetShortUINameNoTooltipNoFormat|U] [CharAreIs(CHARACTER)] known for erecting a gigantic candle in the name of [CharYourHerHis(CHARACTER)] faith that no one could ever take."

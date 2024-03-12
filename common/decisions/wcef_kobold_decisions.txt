@@ -238,8 +238,16 @@ kobolds_sanctify_holy_site = {
 	ai_check_interval = 120
 
 	is_shown = {
-		has_trait = creature_kobold
-		#has_faith = faith:cult_of_the_candle
+		NOT = {
+			is_target_in_global_variable_list = {
+				name = unavailable_unique_decisions
+				target = flag:wcef_candlist_great_candle_decision
+			}
+		}
+		OR = {
+			has_faith = faith:cult_of_the_candle
+			faith = { var:parent_faith = faith:cult_of_the_candle }
+			}
 		is_lowborn = no
 		#highest_held_title_tier >= 3 #Dukes and higher.
 		NOT = { #Just once per Faith.
@@ -251,10 +259,6 @@ kobolds_sanctify_holy_site = {
 			dynasty = {
 				exists = var:variable_sanctified_kobold_mine # TODO: modify, do not link to dynasty
 			}
-		}
-		OR = {
-			has_faith = faith:cult_of_the_candle
-			faith = { var:parent_faith = faith:cult_of_the_candle }
 		}
 	}
 
@@ -289,7 +293,7 @@ kobolds_sanctify_holy_site = {
 	}
 
 	effect = {
-		trigger_event = WCEF_KOBOLDS_0099
+		trigger_event = WCEF_KOBOLDS.0099
 		show_as_tooltip = {
 			kobolds_sanctify_holy_site_decision_effect = yes
 		}

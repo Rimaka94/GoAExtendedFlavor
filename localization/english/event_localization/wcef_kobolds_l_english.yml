@@ -13,12 +13,12 @@
  WCEF_KOBOLDS_0099_OPT_E:0 "$c_grim_batol$ is scary... Others could learn to fear us."
  WCEF_KOBOLDS_0099_OPT_F:0 "Nevermind, we should wait."
 
- WCEF_KOBOLDS_0100_TITLE:0 "The Candle Speaks"
- WCEF_KOBOLDS_0100_DESC:0 "x"
- WCEF_KOBOLDS_0100_OPT_A:0 "I am chosen!"
- WCEF_KOBOLDS_0100_OPT_B:0 "I am chosen!"
- WCEF_KOBOLDS_0100_DESC_A:0 "Aaaa"
- WCEF_KOBOLDS_0100_DESC_B:0 "Aaaa"
+ WCEF_KOBOLDS_0100_TITLE:0 "The Great Candle: Sanctification"
+ WCEF_KOBOLDS_0100_DESC:0 "aaaa"
+ WCEF_KOBOLDS_0100_OPT_A:0 "I will deliver us from darkness!"
+ WCEF_KOBOLDS_0100_OPT_B:0 "I will deliver us from darkness!"
+ WCEF_KOBOLDS_0100_DESC_A:0 "Within the caverns of [great_candle_county.GetNameNoTier], [ROOT.Char.GetTitledFirstName] has invited $cult_of_the_candle_adherent_plural$ from all corners of Azeroth to contribute the wax of their candles, forming a single, combined Great Candle that will burn eternally. Organizing such a symbol of our faith is sure to bring glory to [ROOT.Char.GetFirstName] and [ROOT.Char.GetFirstNamePossessive] dynasty and further legitimize the power of the Candle!\n\nIt is not long before $cult_of_the_candle_adherent_plural$ have packed the caverns and now stand before a towering Great Candle, ready to be lit for all eternity. You give the order and your shamans stand in a ritual around the Great Candle, beseeching the favor of the Fire element. Soon, the wick combusts and a bright light engulfs all pathways of the cavern! $cult_of_the_candle_adherent_plural$ celebrate throughout the halls and many approach you to show respect and reverence for your role in sanctifying this holy place.\n\n"All hail $nick_candlekeeper$!""
+ WCEF_KOBOLDS_0100_DESC_B:0 "aaaa"
 
  kobolds_sanctify_holy_site:0 "Sanctify Holy Site"
  kobolds_sanctify_holy_site_desc:0 "In honor of The Candle, we should proclaim one of our holy sites to be the center of our faith and build a Great Candle out of wax from $cult_of_the_candle_adherent_plural$ across all of Azeroth!"
